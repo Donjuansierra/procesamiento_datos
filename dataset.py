@@ -15,7 +15,7 @@ print('La edad promedio de los pacientes es: ', avg_age) '''
 
 df = pd.DataFrame(data)
 
-# Separar el dataframe en dos diferentes, uno conteniendo las filas con personas que perecieron (is_dead=1) y otro con el complemento
+''' # Separar el dataframe en dos diferentes, uno conteniendo las filas con personas que perecieron (is_dead=1) y otro con el complemento
 
 df_a = df[df['is_dead'] == 0].copy() # alive
 df_d = df[df['is_dead'] == 1].copy() # dead
@@ -26,4 +26,18 @@ avg_age_a = df_a['age'].mean()
 avg_age_d = df_d['age'].mean()
 
 print(f'La edad promedio de los pacientes vivos es: {avg_age_a}')
-print(f'La edad promedio de los pacientes muertos es: {avg_age_d}')
+print(f'La edad promedio de los pacientes muertos es: {avg_age_d}') '''
+
+# Verificar que los tipos de datos son correctos en cada colúmna 
+
+print(df.dtypes)
+
+# Calcular la cantidad de hombres fumadores vs mujeres fumadoras
+
+df_smokers = df[df['is_smoker'] == True]
+df_smokers = df_smokers.groupby('is_male').size().reset_index(name = 'Count')
+female = df_smokers.loc[0,'Count'] 
+male = df_smokers.loc[1,'Count'] 
+
+print(f'En el dataset se presentan {female} mujeres fumadoras' )
+print(f'En el dataset se presentan {male} hombres fumadores'  )
