@@ -14,7 +14,7 @@ def descarga_datos(url, nombre):
     
     """
     
-    # Para leer el request como texto
+    # Para realizar un GET request
     response = requests.get(url) 
         
     # Para leer el request como texto
