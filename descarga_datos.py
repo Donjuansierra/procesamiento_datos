@@ -3,7 +3,7 @@ import csv
 
 
 # Funcion para descargar datos de una Url
-def descarga_datos(url, nombre):
+def descarga(url, nombre):
     """
     Función para descargar datos de una url especifica
     
@@ -29,7 +29,7 @@ def descarga_datos(url, nombre):
 
 
 # Prueba de la función
-datos = descarga_datos("https://huggingface.co/datasets/mstz/heart_failure/raw/main/heart_failure_clinical_records_dataset.csv", "dataset.csv")
+datos = descarga("https://huggingface.co/datasets/mstz/heart_failure/raw/main/heart_failure_clinical_records_dataset.csv", "dataset.csv")
 
 print(datos)
 
